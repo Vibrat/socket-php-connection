@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket Connection</title>
+        <meta charset="utf-8" />
+        <script>
+            let socket = new WebSocket("ws://127.0.0.1:88");
+
+            socket.onopen = function () {
+                console.log ("Web Socket inits connection");
+
+                socket.send("hello he");
+            };
+
+            socket.onmessage = function () {
+                console.log ("Web Socket Message tranfered");
+            };
+
+            socket.onerror = function (e) {
+                console.log ("socket onerror", e);
+            };
+
+            socket.onclose = function () {
+                console.log ("socket onClose");
+            }
+
+         </script>
+    </head>
+    <body>
+
+    </body>
+</html>
