@@ -24,6 +24,11 @@
                 console.log ("socket onClose");
             }
 
+            // Close the connection when the window is closed
+            window.addEventListener('beforeunload', function() {
+                socket.close();
+            });
+
          </script>
     </head>
     <body>
